@@ -1,0 +1,100 @@
+Prayer;Category;Nusach (1 = Both, 2 = Ari, 3 = Ashk);display_name;Price
+Modeh Ani;Shacharit;1;0;1800
+Asher Yatzar;Shacharit;1;1;1800
+Elokai;Shacharit;1;0;1800
+Hanoten lashechvi vina;Shacharit;1;0;360
+Pokeach ivrim;Shacharit;1;0;360
+Matir asurim;Shacharit;1;0;360
+Zokeif keffufim;Shacharit;1;0;360
+Malbish arumim;Shacharit;1;0;360
+Hanoten layaef koach;Shacharit;1;0;360
+Roka haaretz;Shacharit;1;0;360
+hameichin;Shacharit;1;0;360
+Sheasa li;Shacharit;1;0;360
+Ozer - bigvura;Shacharit;1;0;360
+Ozer - besifara;Shacharit;1;0;360
+Shelo asani goy;Shacharit;1;0;360
+Shelo asani aved;Shacharit;1;0;360
+Sh' kirstono;Shacharit;3;0;360
+Ha'mavir sheino ;Shacharit;1;0;
+Vihi Ratzon;Shacharit;1;1;
+Yehi Ratzon;Shacharit;1;1;720
+Brachot on Torah;Shacharit;1;1;540
+Vayadaber;Shacharit;2;1;360
+Yevarechecha;Shacharit;1;0;360
+Eilu Devarim;Shacharit;1;1;1800
+Hareini Mekabel;Shacharit;1;1;360
+Ma Tovu;Shacharit;1;1;720
+Adon Olam;Shacharit;1;1;3600
+Hodu;Shacharit;1;0;
+Baruch She'amar;Shacharit;1;1;3600
+Mizmor;Shacharit;1;0;360
+Yehi Chevod;Shacharit;1;0;540
+Ashrei;Shacharit;1;0;3600
+#1 Halleluka Halleli;Shacharit;1;0;1800
+#2 Halleluka Ki Tov;Shacharit;1;0;1800
+#3 Halleluka Hallelu;Shacharit;1;0;1800
+#4 Halleluka Shiru;Shacharit;1;0;1800
+#5 Halleluka Hallelu;Shacharit;1;0;1800
+Baruch;Shacharit;1;0;360
+Vecharot;Shacharit;1;0;720
+Vayosha;Shacharit;1;0;180
+Az Yashir;Shacharit;1;0;1800
+Yishtabach;Shacharit;1;1;3600
+Brocha;Shacharit;1;0;360
+Hameir;Shacharit;1;1;1800
+Tisbarech;Shacharit;1;1;720
+Et sheim;Shacharit;1;1;720
+Kadosh Kadosh Kadosh;Shacharit;1;0;360
+Lakel Baruch;Shacharit;1;1;720
+Ahavat Olam Ahava Raba;Shacharit;1;1;1800
+Keil Melech Neeman;Shacharit;3;1;180
+Shema;Shacharit;1;0;5400
+Vehaya;Shacharit;1;0;1800
+Vayomer;Shacharit;1;0;720
+Emet Veyatziv;Shacharit;1;0;720
+Al harishonim;Shacharit;1;1;360
+Ezrat;Shacharit;1;1;720
+Tehilla Lakel elyon;Shacharit;1;1;360
+Shira Chadasha;Shacharit;1;1;360
+Tsur Yisrael;Shacharit;1;1;360
+Amidah;Shacharit;1;1;18000
+Tachanun;Shacharit;1;0;
+Song of the day - Sunday;Shacharit;1;0;540
+Song of the day - Monday;Shacharit;1;0;540
+Song of the day - Tuesday;Shacharit;1;0;540
+Song of the day - Wednesday;Shacharit;1;0;540
+Song of the day - Thursday;Shacharit;1;0;540
+Song of the day - Friday;Shacharit;1;0;540
+Song of the day - Shabbat;Shacharit;1;0;540
+Kave kel Hashem;Shacharit;1;0;180
+Ein Kelokenu;Shacharit;1;0;720
+Aleinu;Shacharit;1;1;720
+Ve'al Ken;Shacharit;1;1;540
+Al Tira;Shacharit;1;0;360
+Ach Tzaddikim;Shacharit;1;0;180
+Lamnatzeach;Shacharit;1;0;540
+;;;;
+Bracha for Hallel;Hallel;1;0;180
+Halleluka Hallelu;Hallel;1;0;540
+Btzeit Yisrael;Hallel;1;0;540
+Hashem Zecharanu;Hallel;1;0;360
+Ma Ashiv;Hallel;1;0;360
+Hallelu et Hashem;Hallel;1;0;360
+Hodu;Hallel;1;0;360
+Min Hameitzar;Hallel;1;0;720
+Ana Hashem;Hallel;1;0;180
+Baruch Haba;Hallel;1;0;360
+Hallelucha;Hallel;1;0;180
+Bracha after Hallel;Hallel;1;0;180
+;;;;
+Hamotsi;Before Brochas;1;0;360
+Hagafen;Before Brochas;1;0;360
+Mizanot;Before Brochas;1;0;360
+Ha eitz;Before Brochas;1;0;360
+Ha Adama;Before Brochas;1;0;360
+Shehakol;Before Brochas;1;0;360
+;;;;
+Birchat Hamazon;After Brochas;1;1;5400
+Al hamichya;After Brochas;1;1;720
+Borei Nefashot;After Brochas;1;0;540
