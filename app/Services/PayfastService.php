@@ -8,7 +8,13 @@ use Carbon\Carbon;
 class PayfastService {
 
     private static function details() {
+
         $testing = true;
+
+        if (env('APP_ENV') == 'production') {
+            $testing = false;
+        }
+
         $actual_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 
         $details = [
