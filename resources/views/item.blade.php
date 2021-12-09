@@ -2,7 +2,7 @@
 
     <!-- Header -->
     <header id="header">
-        <a href="/" class="title">Tefillah</a>
+        <a href="/" class="title">Davening Project</a>
         <nav>
             <!--
             <ul>
