@@ -37,7 +37,9 @@ class PayfastService {
         $details = PayfastService::details();
         # $amount = 10.00;// This amount needs to be sourced from your application
 
+
         $id_info = explode('#', $payment_id);
+        $is_item = false;
 
         if ($id_info[0] == 'I') {
             $is_item = true;
@@ -132,7 +134,7 @@ class PayfastService {
         $pfParamString = substr($pfParamString, 0, -1);
         $amount = $pfData['amount_gross'];
         $id_info = explode('#', $pfData['m_payment_id']);
-
+        $is_item = false;
         if ($id_info[0] == 'I') {
             $is_item = true;
             $item_id = $id_info[1];

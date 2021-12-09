@@ -71,7 +71,7 @@ Route::get('thankyou/{item?}', function (Item $item = null) {
     return view('thank-you', compact('item'));
 });
 
-Route::get('test', function () {
+Route::get('fill', function () {
     # dd(\App\Services\PayfastService::data(100));
     \App\Services\PrayerService::fill_tables();
 });

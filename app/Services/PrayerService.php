@@ -23,20 +23,25 @@ class PrayerService {
             if (!empty($line[0])) {
                 $data[] = $line;
                 $nusach = $line[2] - 1;
+                $price = $line[4];
+
+                if (empty($price)) {
+                    $price = 1800;
+                }
 
                 print($nusach);
                 $p = Prayer::create([
                     'prayer' => $line[0],
                     'category' => $line[1],
                     //'show_name' => $line[3],
-                    'price' => $line[4]
+                    'price' => $price
                 ]);
 
                 if ($nusach == 0) {
-                    $p->items()->create(['nusach' => 1, 'price' => $line[4]]);
-                    $p->items()->create(['nusach' => 2, 'price' => $line[4]]);
+                    $p->items()->create(['nusach' => 1, 'price' => $price]);
+                    $p->items()->create(['nusach' => 2, 'price' => $price]);
                 } else {
-                    $p->items()->create(['nusach' => $nusach, 'price' => $line[4]]);
+                    $p->items()->create(['nusach' => $nusach, 'price' => $price]);
                 }
 
             }

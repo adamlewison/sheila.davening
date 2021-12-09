@@ -76,7 +76,7 @@
     <!-- Intro -->
     <section id="intro" class="wrapper style1 fullscreen fade-up">
         <div class="inner">
-            <h1>The Tefillah Project</h1>
+            <h1>The Davening Project</h1>
             <p>
                 Brief description here
             </p>
