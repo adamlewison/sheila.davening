@@ -21,7 +21,7 @@
         <section id="main" class="wrapper">
 
             <div class="inner">
-                <h1 class="major">{{$item->prayer->category}}</h1>
+                <h1 class="major">Sponsor a Tefillah</h1>
                 <h2>{{$item->prayer->prayer}} - Nusach {{\App\Models\Item::NUSACH[$item->nusach]}}</h2>
 
                 <h3>
@@ -36,6 +36,12 @@
                 <div>
                     <form method="post" action="/items/{{$item->id}}">
                         @csrf
+
+                        <div>
+                            <h2>Your Details</h2>
+                            <hr>
+                        </div>
+
                         <div class="fields">
                             <div class="field half">
                                 <label for="name">First Name</label>
@@ -50,8 +56,31 @@
                                 <input type="text" name="email" id="email" />
                             </div>
                         </div>
+
+                        <div>
+                            <h2>Sponsorship Details</h2>
+                            <hr>
+                        </div>
+
+                        <div class="fields">
+
+                            <div class="field ">
+                                <label for="sponsor_by">This sponsor is made by</label>
+                                <input type="text" name="sponsor_by" />
+                            </div>
+
+                            <div class="field ">
+                                <label for="merit_of">This sponsor is for the merit of...</label>
+                                <input type="text" name="merit_of" />
+                            </div>
+
+                            <div class="field ">
+                                <input type="checkbox" name="show_on_app" checked id="show_on_app"/>
+                                <label for="show_on_app">Show sponsorship details on the app</label>
+                            </div>
+                        </div>
                         <ul class="actions">
-                            <li><a href="" class="button submit">Pay R{{$item->price}}</a></li>
+                            <li><a href="" class="button primary submit">Pay R{{$item->price}}</a></li>
                         </ul>
                     </form>
                 </div>

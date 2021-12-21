@@ -62,7 +62,7 @@
         <nav>
             <ul>
                 <li><a href="#intro">Welcome</a></li>
-                <li><a href="#one">Sponsor a Prayer</a></li>
+                <li><a href="#one">Sponsor a Tefillah</a></li>
                 <li><a href="#two">Donate</a></li>
                 <li><a href="#three">Get in touch</a></li>
             </ul>
@@ -78,10 +78,13 @@
         <div class="inner">
             <h1>The Davening Project</h1>
             <p>
-                Brief description here
+                This website serves to raise funds for the creation of a davening app.
+                The chinuch app is made by women for women to learn/improve their davening.
+                We would like to partner with you by providing an opportunity to sponsor a tefillah in honour of a loved one.
+                Thank you for helping us make this happen, we hope that we will continue to develop according to the expressed requirements of our market.
             </p>
             <ul class="actions">
-                <li><a href="#one" class="button scrolly">Learn more</a></li>
+                <li><a href="#one" class="button scrolly">Sponsor a Tefillah</a></li>
             </ul>
         </div>
     </section>
@@ -89,9 +92,9 @@
     <!-- One -->
     <section id="one" class="wrapper style2 spotlights">
         <div class="inner">
-            <h1>Sponsor a Prayer</h1>
+            <h1>Sponsor a Tefillah</h1>
             <p>
-                Find a prayer to sponsor and see prices by selecting a category and navigating through the different options.
+                Find a Tefillah to sponsor and see prices by selecting a category and navigating through the different options.
                 When you have made your decision, select the Nusach - Ari or Ashkenaz - which you would like to sponsor to proceed to the checkout page.
                 If you are not able to select the desired nusach for your chosen prayer, it probably means that prayer has already been sponsored!
             </p>
@@ -245,26 +248,26 @@
             </p>
             <div class="split style1">
                 <section>
+                    <ul class="contact">
 
+                        <li>
+                            <h3>Organizer</h3>
+                            <span>Sheila Valentini</span>
+                        </li>
+                    </ul>
                 </section>
                 <section>
                     <ul class="contact">
-                        <!--
-                        <li>
-                            <h3>Address</h3>
-                            <span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-                        </li>
-                        -->
+
                         <li>
                             <h3>Email</h3>
-                            <a href="#">user@untitled.tld</a>
+                            <a href="mailto:sheilavalentini@cttorahhigh.com">sheilavalentini@cttorahhigh.com</a>
                         </li>
                         <li>
                             <h3>Phone</h3>
-                            <span>(000) 000-0000</span>
+                            <span>+27 (0) 73 341 9738</span>
                         </li>
+                        <!--
                         <li>
                             <h3>Social</h3>
                             <ul class="icons">
@@ -275,6 +278,7 @@
                                 <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
                             </ul>
                         </li>
+                        -->
                     </ul>
                 </section>
             </div>

@@ -2,6 +2,7 @@
 
 use App\Models\Item;
 use App\Services\PayfastService;
+use App\Services\PrayerService;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -45,12 +46,20 @@ Route::post('/items/{item}', function (Item $item) {
     }
 
     $item->update(['purchase_attempted_at' => Carbon::now()]);
+    $purchaseAttempt = $item->purchaseAttempts()->create([
+        'first_name'    => request()->first_name,
+        'last_name'     => request()->last_name,
+        'email'         => request()->email,
+        'sponsor_by'    => request()->sponsor_by,
+        'merit_of'      => request()->merit_of,
+        'show_on_app'   => isset(request()->show_on_app) ? 'true' : 'false'
+    ]);
 
     $item_name = str_replace("'", "", $item->prayer->prayer) . " - nusach " . Item::NUSACH[$item->nusach];
-    $p_id = "I#" . $item->id;
+    $p_id = "PA#" . $purchaseAttempt->id;
     $pf_form = PayfastService::form($item->price, $p_id, $item_name, request()->email, request()->first_name, request()->last_name);
 
-    print("Redirecting to Payfast. If the page does not automatically redirect, please ensure you have javascript enabled and try again.");
+    print("Redirecting to Payfast Payment Portal");
     print('<div style="display: none">' . $pf_form . '</div>');
     print('<script type="text/javascript">document.getElementById("payfast-form").submit();</script>');
 });
@@ -72,8 +81,11 @@ Route::get('thankyou/{item?}', function (Item $item = null) {
 });
 
 Route::get('fill', function () {
-    # dd(\App\Services\PayfastService::data(100));
-    \App\Services\PrayerService::fill_tables();
+    PrayerService::fill_tables();
+});
+
+Route::get('csv', function () {
+    PrayerService::sponsor_info();
 });
 
 Route::post('payfast/go', function () {

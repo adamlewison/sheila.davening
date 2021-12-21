@@ -39,4 +39,12 @@ class Item extends Model
     public function prayer() {
         return $this->belongsTo(Prayer::class);
     }
+
+    public function purchaseAttempts() {
+        return $this->hasMany(PurchaseAttempt::class);
+    }
+
+    public function purchaseDetails() {
+        return $this->purchaseAttempts()->whereNotNull('completed_at')->first();
+    }
 }

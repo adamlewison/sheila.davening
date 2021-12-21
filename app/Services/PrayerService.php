@@ -51,4 +51,49 @@ class PrayerService {
         //return $data;
     }
 
+    public static function sponsor_info() {
+
+        $data = [];
+        $headers = ['tefillah', 'category', 'nusach', 'first_name', 'last_name', 'email', 'sponsor_by', 'merit_of', 'show_on_app'];
+
+        foreach (Prayer::all() as $prayer) {
+
+            foreach ($prayer->items as $item) {
+
+                $row = [
+                    'tefillah'      => $prayer->prayer,
+                    'category'      => $prayer->category,
+                    'nusach'        => Item::NUSACH[$item->nusach],
+                    'first_name'    => 'NA',
+                    'last_name'     => 'NA',
+                    'email'         => 'NA',
+                    'sponsor_by'    => 'NA',
+                    'merit_of'      => 'NA',
+                    'show_on_app'   => 'NA'
+                ];
+
+                if ($item->purchased()) {
+                    $details            = $item->purchaseDetails();
+                    $row['first_name']  = $details->first_name;
+                    $row['last_name']   = $details->last_name;
+                    $row['email']       = $details->email;
+                    $row['sponsor_by']  = $details->sponsor_by;
+                    $row['merit_of']    = $details->merit_of;
+                    $row['show_on_app'] = $details->show_on_app;
+                }
+
+                $data[] = $row;
+            }
+        }
+
+
+
+        foreach (array_merge([$headers], $data) as $fields) {
+            print (implode(',' , $fields)) . "<br/>";
+        }
+
+
+
+        //dd($data);
+    }
 }

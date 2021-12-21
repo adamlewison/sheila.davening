@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Item;
+use App\Models\PurchaseAttempt;
 use Carbon\Carbon;
 
 class PayfastService {
@@ -34,7 +35,7 @@ class PayfastService {
         foreach ($data['form_input'] as $name => $value) {
             $out .= "<input name='$name' value='$value' />";
         }
-        $out .= '</form>';
+        //$out .= '<input type="submit"></form>';
         return $out;
     }
 
@@ -47,9 +48,10 @@ class PayfastService {
         $id_info = explode('#', $payment_id);
         $is_item = false;
 
-        if ($id_info[0] == 'I') {
+        if ($id_info[0] == 'PA') {
             $is_item = true;
-            $item_id = $id_info[1];
+            $purchase_attempt = PurchaseAttempt::findOrFail($id_info[1]);
+            $item_id = $purchase_attempt->item_id;
         }
 
         $return_url = ($is_item) ? $details['website_url'] . '/thankyou/' . $item_id : $details['website_url'] . '/thankyou';
@@ -139,11 +141,14 @@ class PayfastService {
 
         $pfParamString = substr($pfParamString, 0, -1);
         $amount = $pfData['amount_gross'];
+
         $id_info = explode('#', $pfData['m_payment_id']);
         $is_item = false;
-        if ($id_info[0] == 'I') {
+
+        if ($id_info[0] == 'PA') {
             $is_item = true;
-            $item_id = $id_info[1];
+            $purchase_attempt = PurchaseAttempt::findOrFail($id_info[1]);
+            $item_id = $purchase_attempt->item_id;
             $item = Item::findOrFail($item_id);
             $amount = $item->price;
         }
@@ -158,7 +163,14 @@ class PayfastService {
             // All checks have passed, the payment is successful
 
             if ($is_item) {
-                $item->update(['purchased_at' => Carbon::now()]);
+                if (!$item->purchased()) {
+                    $purchase_attempt->update([
+                        'completed_at' => Carbon::now(),
+                    ]);
+                    $item->update(['purchased_at' => Carbon::now()]);
+                } else {
+                    print("Item already purchased by someone else.");
+                }
             }
         } else {
             print('fail');
