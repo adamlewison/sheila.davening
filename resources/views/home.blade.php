@@ -62,7 +62,7 @@
         <nav>
             <ul>
                 <li><a href="#intro">Welcome</a></li>
-                <li><a href="#one">Sponsor a Tefillah</a></li>
+                <li><a href="#one">Purchase a Tefillah</a></li>
 
                 <!--
                 <li><a href="#two">Donate</a></li>
@@ -96,7 +96,7 @@
     <!-- One -->
     <section id="one" class="wrapper style2 spotlights">
         <div class="inner">
-            <h1>Sponsor a Tefillah</h1>
+            <h1>Purchase a Tefillah</h1>
             <p>
                 Find a Tefillah to purchase and see prices by selecting a category and navigating through the different options.
                 When you have made your decision, select the Nusach - Ari or Ashkenaz - which you would like to sponsor to proceed to the checkout page.

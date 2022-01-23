@@ -21,14 +21,14 @@
         <section id="main" class="wrapper">
 
             <div class="inner">
-                <h1 class="major">Sponsor a Tefillah</h1>
+                <h1 class="major">Purchase a Tefillah</h1>
                 <h2>{{$item->prayer->prayer}} - Nusach {{\App\Models\Item::NUSACH[$item->nusach]}}</h2>
 
                 <h3>
                     You are almost there!
                 </h3>
                 <p>
-                    We are so excited that you are going to be sponsoring the recording of {{$item->prayer->prayer}} for the
+                    We are so excited that you are going to be purchasing the recording of {{$item->prayer->prayer}} for the
                     {{\App\Models\Item::NUSACH[$item->nusach]}} Nusach! Please tell us your name (You can remain anonymous if you want).
                     And then proceed with the payment using the button below.
                 </p>
