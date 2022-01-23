@@ -63,7 +63,11 @@
             <ul>
                 <li><a href="#intro">Welcome</a></li>
                 <li><a href="#one">Sponsor a Tefillah</a></li>
+
+                <!--
                 <li><a href="#two">Donate</a></li>
+                -->
+
                 <li><a href="#three">Get in touch</a></li>
             </ul>
         </nav>
@@ -78,9 +82,9 @@
         <div class="inner">
             <h1>The Davening Project</h1>
             <p>
-                This website serves to raise funds for the creation of a davening app.
+                This website serves the creation of a davening app.
                 The chinuch app is made by women for women to learn/improve their davening.
-                We would like to partner with you by providing an opportunity to sponsor a tefillah in honour of a loved one.
+                We would like to partner with you by providing an opportunity to "purchase" a tefillah in honour of a loved one.
                 Thank you for helping us make this happen, we hope that we will continue to develop according to the expressed requirements of our market.
             </p>
             <ul class="actions">
@@ -94,9 +98,9 @@
         <div class="inner">
             <h1>Sponsor a Tefillah</h1>
             <p>
-                Find a Tefillah to sponsor and see prices by selecting a category and navigating through the different options.
+                Find a Tefillah to purchase and see prices by selecting a category and navigating through the different options.
                 When you have made your decision, select the Nusach - Ari or Ashkenaz - which you would like to sponsor to proceed to the checkout page.
-                If you are not able to select the desired nusach for your chosen prayer, it probably means that prayer has already been sponsored!
+                If you are not able to select the desired nusach for your chosen prayer, it probably means that prayer has already been bought!
             </p>
             <ul class="actions fit" id="prayer-category-list">
                 @foreach(\App\Models\Prayer::categories() as $cat)
@@ -210,6 +214,7 @@
     </section>
 
     <!-- Two -->
+    <!--
     <section id="two" class="wrapper style3 fade-up">
         <div class="inner">
             <h2>Make a donation</h2>
@@ -238,6 +243,7 @@
             </form>
         </div>
     </section>
+    -->
 
     <!-- Three -->
     <section id="three" class="wrapper style1 fade-up">
