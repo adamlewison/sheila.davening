@@ -6,6 +6,7 @@ use App\Services\PrayerService;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,7 @@ Route::post('/items/{item}', function (Item $item) {
 });
 
 Route::post('donate', function () {
+
     request()->validate([
        'amount' => 'required|integer'
     ]);
@@ -78,14 +80,6 @@ Route::post('donate', function () {
 });
 Route::get('thankyou/{item?}', function (Item $item = null) {
     return view('thank-you', compact('item'));
-});
-
-Route::get('fill', function () {
-    PrayerService::fill_tables();
-});
-
-Route::get('csv', function () {
-    PrayerService::sponsor_info();
 });
 
 Route::post('payfast/go', function () {
@@ -102,6 +96,18 @@ Route::get('payfast/cancel', function () {
 
 Route::post('payfast/notify', function () {
     PayfastService::notify();
+});
+
+Route::get('migrate-refresh', function () {
+    Artisan::call('migrate:refresh');
+});
+
+Route::get('fill', function () {
+    PrayerService::fill_tables();
+});
+
+Route::get('csv', function () {
+    PrayerService::sponsor_info();
 });
 
 /*
