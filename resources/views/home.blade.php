@@ -88,7 +88,7 @@
                 Thank you for helping us make this happen, we hope that we will continue to develop according to the expressed requirements of our market.
             </p>
             <ul class="actions">
-                <li><a href="#one" class="button scrolly">Sponsor a Tefillah</a></li>
+                <li><a href="#one" class="button scrolly">Purchase a Tefillah</a></li>
             </ul>
         </div>
     </section>
