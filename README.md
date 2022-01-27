@@ -75,6 +75,9 @@ Go to URL: http://mail.daveningproject.online:2083
 Username: davenmib
 Password : G9$&8rNNcTlh
 
+davenmib
+X4@?$eSnSM8w3&
+
 IN THE URL ABOVE PLEASE NOTE THE "mail" IN FRONT OF THE DOMAIN NAME AND THE "/" AFTER THE CPANEL
 
 Please note that your domain may take 24 - 48 hours to go live.
