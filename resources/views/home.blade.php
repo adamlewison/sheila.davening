@@ -96,12 +96,15 @@
     <!-- One -->
     <section id="one" class="wrapper style2 spotlights">
         <div class="inner">
+
             <h1>Purchase a Tefillah</h1>
+
             <p>
                 Find a Tefillah to purchase and see prices by selecting a category and navigating through the different options.
                 When you have made your decision, select the Nusach - Ari or Ashkenaz - to proceed to the checkout page.
                 If you are not able to select the desired nusach for your chosen prayer (and Nusach), it probably means that prayer has already been bought!
             </p>
+
             <ul class="actions fit" id="prayer-category-list">
                 @foreach(\App\Models\Prayer::categories() as $cat)
                     <li data-category="{{$cat}}" onclick="set_category('{{$cat}}')"><a href="#{{$cat}}">{{$cat}}</a></li>
