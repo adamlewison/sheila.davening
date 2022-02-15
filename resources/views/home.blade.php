@@ -82,10 +82,13 @@
         <div class="inner">
             <h1>The Davening Project</h1>
             <p>
+                <!--
                 This website serves the creation of a davening app.
                 The chinuch app is made by women for women to learn/improve their davening.
                 We would like to partner with you by providing an opportunity to "purchase" a tefillah in honour of a loved one.
                 Thank you for helping us make this happen, we hope that we will continue to develop according to the expressed requirements of our market.
+                -->
+                This website serves to create a chinuch davening app.  How? The proceeds of this website will finance the recordings and the creation of a davening app made by women for women. By purchasing a tefillah in the merit of a loved one, you will partner with us in making the app free for all women who wish to learn or improve their davening.  Thank you for helping us make this a reality and we hope that we will continue to develop according to the expressed requirements of our market.
             </p>
             <ul class="actions">
                 <li><a href="#one" class="button scrolly">Purchase a Tefillah</a></li>
