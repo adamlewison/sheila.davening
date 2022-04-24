@@ -80,7 +80,12 @@
                             </div>
                         </div>
                         <ul class="actions">
+                            <!--
                             <li><a href="" class="button primary submit">Pay R{{$item->price}}</a></li>
+                            -->
+                            <li><a href="" class="submit">
+                                    <img src="images/walletdoc-pay.png" alt="" width="50px">
+                                </a></li>
                         </ul>
                     </form>
                 </div>
