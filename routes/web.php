@@ -42,6 +42,10 @@ Route::get('/items/{item}', function (Item $item) {
 
 Route::post('/items/{item}', function (Item $item) {
 
+    request()->validate([
+        'email' => 'required|email'
+    ]);
+
     if (!$item->available()) {
         return redirect()->route('home');
     }
@@ -56,13 +60,20 @@ Route::post('/items/{item}', function (Item $item) {
         'show_on_app'   => isset(request()->show_on_app) ? 'true' : 'false'
     ]);
 
+    /*
+     *
+
     $item_name = str_replace("'", "", $item->prayer->prayer) . " - nusach " . Item::NUSACH[$item->nusach];
     $p_id = "PA#" . $purchaseAttempt->id;
     $pf_form = PayfastService::form($item->price, $p_id, $item_name, request()->email, request()->first_name, request()->last_name);
-
     print("Redirecting to Payfast Payment Portal");
-    print('<div style="display: none">' . $pf_form . '</div>');
-    print('<script type="text/javascript">document.getElementById("payfast-form").submit();</script>');
+     */
+    print("<p>You will now be redirected to the secure Walletdoc payment platform.
+    It is your responsibility to ensure that you enter the full amount correctly (R" . $item->price . "). Your sponsorship will only
+    be recognized once we have received this amount.</p>
+    <p>Please click <a href='https://www.walletdoc.com/pay/Davening-Project'>here</a> to redirect to walletdoc payment portal</p>");
+    // print('<div style="display: none"><form action="https://www.walletdoc.com/pay/Davening-Project"></form></div>');
+    // print('<script type="text/javascript">document.getElementById("payfast-form").submit();</script>');
 });
 
 Route::post('donate', function () {
@@ -110,10 +121,14 @@ Route::get('csv', function () {
     PrayerService::sponsor_info();
 });
 
-/*
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-*/
+
+Route::middleware('auth')->group(function () {
+    Route::get('items/{item}/clear', [\App\Http\Controllers\ItemController::class, 'clear']);
+});
+
 
 require __DIR__.'/auth.php';

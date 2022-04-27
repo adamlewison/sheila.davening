@@ -29,7 +29,8 @@ class Item extends Model
     }
 
     public function onHold() {
-        return isset($this->purchase_attempted_at) && Carbon::now()->diffInMinutes($this->purchase_attempted_at) < 8;
+        return isset($this->purchase_attempted_at);
+        # return isset($this->purchase_attempted_at) && Carbon::now()->diffInMinutes($this->purchase_attempted_at) < 30;
     }
 
     public function available() {
@@ -44,7 +45,20 @@ class Item extends Model
         return $this->hasMany(PurchaseAttempt::class);
     }
 
+    public function purchaseAttempt() {
+        if ($this->available()) {
+            return null;
+        } else {
+            return $this->purchaseAttempts->last();
+        }
+    }
+
     public function purchaseDetails() {
         return $this->purchaseAttempts()->whereNotNull('completed_at')->first();
+    }
+    public static function category($cat) {
+        return Item::whereHas('prayer', function ($q) use ($cat) {
+            $q->where('category', $cat);
+        });
     }
 }

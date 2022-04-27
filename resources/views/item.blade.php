@@ -38,6 +38,11 @@
                         @csrf
 
                         <div>
+                            <!-- Validation Errors -->
+                            <div style="color: red">
+                                <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                            </div>
+
                             <h2>Your Details</h2>
                             <hr>
                         </div>
@@ -82,10 +87,16 @@
                         <ul class="actions">
                             <!--
                             <li><a href="" class="button primary submit">Pay R{{$item->price}}</a></li>
-                            -->
+
                             <li><a href="" class="submit">
-                                    <img src="images/walletdoc-pay.png" alt="" width="50px">
+                                    <img src="/images/walletdoc-pay.png" alt="" width="250px">
                                 </a></li>
+                                 -->
+                                <li>
+                                    <a href="" class="submit">
+                                        <img src="/images/walletdoc-pay.png" alt="" width="250px">
+                                    </a>
+                                </li>
                         </ul>
                     </form>
                 </div>

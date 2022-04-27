@@ -82,4 +82,9 @@ class ItemController extends Controller
     {
         //
     }
+
+    public function clear(Item $item) {
+        $item->update(['purchase_attempted_at' => null]);
+        return back();
+    }
 }
