@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Item;
+use App\Models\Prayer;
 use App\Services\PayfastService;
 use App\Services\PrayerService;
 use Carbon\Carbon;
@@ -122,8 +123,15 @@ Route::get('csv', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboard/{page?}', function ($page = 'main') {
+
+    $cat = null;
+    if ($page != 'main') {
+        if (in_array(ucfirst($page), Prayer::categories())) {
+            $cat = ucfirst($page);
+        }
+    }
+    return view('dashboard')->with(['page' => $page, 'cat' => $cat]);
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
