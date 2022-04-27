@@ -19,21 +19,25 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     @foreach(\App\Models\Prayer::categories() as $cat)
                         <div class="text-5xl my-5">{{$cat}}</div>
-                        <table class="table-auto w-full">
-                            <thead>
+                        <table class="min-w-full">
+                            <thead class="border-b">
                             <tr>
-                                <th>Name</th>
-                                <th>Nusach</th>
-                                <th>Purchaser</th>
-                                <th>Actions</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Name</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Nusach</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Purchaser</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
                         @foreach(\App\Models\Item::category($cat)->get() as $i => $item)
-                            <tr>
-                                <td>{{$item->prayer->prayer}}</td>
-                                <td>{{\App\Models\Item::NUSACH[$item->nusach]}}</td>
-                                <td>
+                            <tr class="border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {{$item->prayer->prayer}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{\App\Models\Item::NUSACH[$item->nusach]}}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     @if( $item->purchaseAttempt() != null )
                                         {{$item->purchaseAttempt()->email}}
                                     @else
