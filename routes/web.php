@@ -34,10 +34,11 @@ Route::get('/', function () {
 
 Route::get('/items/{item}', function (Item $item) {
 
+    /*
     if (!$item->available()) {
         return redirect()->route('home');
     }
-
+    */
     return view('item', compact('item'));
 });
 
@@ -48,7 +49,7 @@ Route::post('/items/{item}', function (Item $item) {
     ]);
 
     if (!$item->available()) {
-        return redirect()->route('home');
+        return redirect()->back();
     }
 
     $item->update(['purchase_attempted_at' => Carbon::now()]);
