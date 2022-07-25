@@ -116,6 +116,8 @@
             <hr>
             <div class="table-wrapper">
 
+                
+
                 <table>
                     <!--
                     <thead>
@@ -130,7 +132,15 @@
                         <tbody data-category="{{$cat}}">
                             @foreach(\App\Models\Prayer::category($cat)->get() as $i => $prayer)
                                 <tr data-index="{{$i}}">
-                                    <th>{{$prayer->prayer}}</th>
+                                    <th>
+                                        {{$prayer->prayer}} <br>
+                                        <span style="
+                                        font-weight: 100;
+                                        font-family: monospace;
+                                        color: #add8e6;">
+                                            R{{$prayer->price}}
+                                        </span>
+                                    </th>
                                     <td style="text-align: center; vertical-align: middle">
                                         <!--
                                         <img src="images/nusach-0.jpg" alt="" height="30px">
@@ -157,7 +167,7 @@
                                             @endif
                                         </ul>
                                     </td>
-                                    <td style="text-align: right">R{{$prayer->price}}.00</td>
+                                    <!-- <td style="text-align: right">R{{$prayer->price}}.00</td> -->
                                 </tr>
                             @endforeach
                         </tbody>
@@ -168,7 +178,7 @@
                             <li class="icon fa fa-arrow-left"></li>
                             Previous
                         </td>
-                        <td colspan="1"></td>
+                        <!-- <td colspan="1"></td> -->
                         <td style="text-align: right" onclick="next()" class="pagination-button">
 
                             Next
