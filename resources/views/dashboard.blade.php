@@ -53,6 +53,11 @@
                                             After Brochas
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="/dashboard/purchases" {{ $cat == "purchases" ? "aria-current='page'" : "" }} class="block py-2 pr-4 pl-3 {{ ($cat === "purchases") ? "md:text-blue-700" : "text-gray-700" }} hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                                            Purchases
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -80,7 +85,18 @@
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         @if( $item->purchaseAttempt() != null )
+
+                                            {{$item->purchaseAttempt()->paymentReference()}}
+
+                                            <br>
+
+                                            <span style="
+                                                font-family: monospace;
+                                                color: rgb(155, 183, 231);
+                                                font-weight: 100;
+                                            ">
                                             {{$item->purchaseAttempt()->email}}
+                                            </span>
                                         @else
                                             NA
                                         @endif
@@ -115,6 +131,75 @@
                     @endif
 
 
+                    @if ($page == "purchases")
+                    <div class="text-5xl my-5">Purchases</div>
+                        <table class="min-w-full">
+                            <thead class="border-b">
+                            <tr>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Name</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Nusach</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Purchaser</th>
+                                <th class="text-m font-bold text-gray-900 px-6 py-4 text-left">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            @foreach(\App\Models\PurchaseAttempt::orderByDesc("created_at")->get() as $pa)
+                                <?php $item = $pa->item; ?>
+                                <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        {{$item->prayer->prayer}}
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        {{\App\Models\Item::NUSACH[$item->nusach]}}
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        @if( $item->purchaseAttempt() != null )
+
+                                            {{$item->purchaseAttempt()->paymentReference()}}
+
+                                            <br>
+
+                                            <span style="
+                                                font-family: monospace;
+                                                color: rgb(155, 183, 231);
+                                                font-weight: 100;
+                                            ">
+                                            {{$item->purchaseAttempt()->email}}
+                                            </span>
+                                        @else
+                                            NA
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <ul>
+                                        @if($item->available())
+                                            <!--
+                                            <li>
+                                                <a href="#" class="button primary disabled">
+                                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                        Mark as Purchased
+                                                    </button>
+                                                </a>
+                                            </li>
+                                            -->
+                                            @else
+                                                <li>
+                                                    <a href="/items/{{$item->id}}/clear" class="button primary disabled">
+                                                        <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                                                            Make Available
+                                                        </button>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        </ul>
+                                    </td>
+                                </tr>
+                            @endforeach    
+                           
+                            </tbody>
+                        </table>
+                    @endif
                 </div>
             </div>
         </div>

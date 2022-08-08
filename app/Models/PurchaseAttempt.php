@@ -20,4 +20,9 @@ class PurchaseAttempt extends Model
     public function completed() {
         return isset($this->completed_at);
     }
+
+    public function paymentReference() {
+        return substr("D" . (($this->item_id * 31)) . "" . strtoupper(substr($this->email, 0, strpos($this->email, "@"))), 0, 7);
+    }
+    
 }

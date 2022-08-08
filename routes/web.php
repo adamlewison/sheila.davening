@@ -70,10 +70,11 @@ Route::post('/items/{item}', function (Item $item) {
     $pf_form = PayfastService::form($item->price, $p_id, $item_name, request()->email, request()->first_name, request()->last_name);
     print("Redirecting to Payfast Payment Portal");
      */
-    print("<p>You will now be redirected to the secure Walletdoc payment platform.
+    print("<p style='padding: 7px;'>You will now be redirected to the secure Walletdoc payment platform.
     It is your responsibility to ensure that you enter the full amount correctly (R" . $item->price . "). Your sponsorship will only
     be recognized once we have received this amount.</p>
     <p>Please click <a href='https://www.walletdoc.com/pay/Davening-Project'>here</a> to redirect to walletdoc payment portal</p>");
+
     // print('<div style="display: none"><form action="https://www.walletdoc.com/pay/Davening-Project"></form></div>');
     // print('<script type="text/javascript">document.getElementById("payfast-form").submit();</script>');
 });
